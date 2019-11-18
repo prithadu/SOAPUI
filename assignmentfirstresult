@@ -1,0 +1,17 @@
+TestCase [Addition] started at 2019-11-18 14:26:37.785
+Step 1 [addition] OK: took 355 ms
+TestCase [Addition] finished with status [FINISHED], time taken = 726
+TestCase [subtraction] started at 2019-11-18 14:26:38.542
+Step 1 [invalidadd] OK: took 371 ms
+TestCase [subtraction] finished with status [FINISHED], time taken = 363
+TestCase [multiply] started at 2019-11-18 14:26:38.912
+Step 1 [delete] OK: took 363 ms
+TestCase [multiply] finished with status [FINISHED], time taken = 346
+TestCase [divide] started at 2019-11-18 14:26:39.263
+Step 1 [multi] OK: took 346 ms
+TestCase [divide] finished with status [FINISHED], time taken = 344
+TestCase [Combo] started at 2019-11-18 14:26:39.613
+Step 1 [division] OK: took 344 ms
+Step 2 [mutiplyfirst] OK: took 319 ms
+TestCase [Combo] finished with status [FINISHED], time taken = 707
+Step 3 [add] OK: took 388 ms
