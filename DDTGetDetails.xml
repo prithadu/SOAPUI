@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="e919ff1c-b3b7-4ede-94f9-92b2259f6ec4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DDTGetDetails" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:testStep type="properties" name="Properties" id="38c0ec2f-762b-49f3-a43a-22ee3af2fb4e"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>empid</con:name><con:value/></con:property><con:property><con:name>Counter</con:name><con:value>0</con:value></con:property><con:property><con:name>Total</con:name><con:value/></con:property><con:property><con:name>end</con:name><con:value>false</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="DataSourceEmp" id="9a72a0d3-e014-48e1-a8b0-21091fdd30f2"><con:settings/><con:config><script>// import Java Excel API library
+import jxl.* 
+import jxl.write.*
+def TestCase = context.testCase
+def FilePath = "C:\\Users\\PrithaDutta\\Desktop\\soapui\\EmpData.xls"
+def count
+Workbook WorkBook1 = Workbook.getWorkbook(new File(FilePath))
+Sheet Sheet1 = WorkBook1.getSheet(0)
+PropertiesTestStep = TestCase.getTestStepByName("Properties")
+count = PropertiesTestStep.getPropertyValue("counter").toInteger()
+//If Total records is unknown (at start), get the rowcount from Excel
+if (PropertiesTestStep.getPropertyValue("total").toString() == "")
+    PropertiesTestStep.setPropertyValue("total", Sheet1.getRows().toString())
+count++
+//Read the Excel test data
+Cell Field1 = Sheet1.getCell(0, count)
+log.info("Count is " + count.toString() + " empid : " + Field1.getContents())
+                
+//Close workbook.
+WorkBook1.close()
+//Copy the Excel test data to properties in Properties test step
+
+
+
+//Copy the Excel test data to properties in Properties test step
+PropertiesTestStep.setPropertyValue("empid", Field1.getContents())
+
+PropertiesTestStep.setPropertyValue("counter", count.toString())
+// check the counter value is less than total no of rows. If same set prop 'end' to 'true'
+if (count == PropertiesTestStep.getPropertyValue("total").toInteger() - 1)
+    PropertiesTestStep.setPropertyValue("end", "true")</script></con:config></con:testStep><con:testStep type="groovy" name="DataLoopEmp" id="51878672-010c-47cd-82d1-53cd3f2f0872"><con:settings/><con:config><script>// declare context, property step
+def TestCase = context.testCase
+PropertiesTestStep = TestCase.getTestStepByName("Properties")
+// get prop value for 'end'
+Stop = PropertiesTestStep.getPropertyValue("end").toString()
+if (Stop=="true")
+    log.info("DataLoopEmp")
+else
+    testRunner.gotoStepByName("DataSourceEmp")    </script></con:config></con:testStep><con:testStep type="restrequest" name="GetEmployeeDetails" id="153795d6-69b1-4e92-bb90-5fe4d252f45d"><con:settings/><con:config service="http://dummy.restapiexample.com" resourcePath="/api/v1/employee/1{empid}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="9e25faaa-346c-40c6-8f0c-a1a63de9deea" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://dummy.restapiexample.com</con:endpoint><con:request/><con:originalUri>http://dummy.restapiexample.com/api/v1/employee/11</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="empid" value="${Properties#empid}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>empid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="CleanUpEmp" id="eaf10be9-5640-49df-8139-cbf1609a4050"><con:settings/><con:config><script>def TestCase = context.testCase
+PropertiesTestStep = TestCase.getTestStepByName("Properties")
+PropertiesTestStep.setPropertyValue("empid","")
+PropertiesTestStep.setPropertyValue("counter", "0")
+PropertiesTestStep.setPropertyValue("total", "")
+PropertiesTestStep.setPropertyValue("end", "false")</script></con:config></con:testStep><con:properties/></con:testCase>
