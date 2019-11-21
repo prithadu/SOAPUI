@@ -1,0 +1,7 @@
+Test started at 2019-11-21 18:20:08.457
+Step 1 [DataSourceforEmployeeDe] OK: took 655 ms
+Step 2 [Properties] OK: took 3 ms
+TestCase finished with status [FINISHED], time taken = 1945
+Step 3 [REST RequestforDelete] UNKNOWN: took 1287 ms
+Step 4 [DataSourceLoopforDelete] OK: took 0 ms
+Step 5 [Cleanupfordelete] OK: took 0 ms

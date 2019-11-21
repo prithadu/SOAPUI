@@ -1,0 +1,19 @@
+Test started at 2019-11-21 18:23:57.596
+Step 1 [Properties] OK: took 0 ms
+Step 2 [DataSourceEmp] OK: took 464 ms
+Step 3 [DataLoopEmp] OK: took 0 ms
+Step 4 [DataSourceEmp] OK: took 561 ms
+Step 5 [DataLoopEmp] OK: took 0 ms
+Step 6 [DataSourceEmp] OK: took 569 ms
+Step 7 [DataLoopEmp] OK: took 0 ms
+Step 8 [DataSourceEmp] OK: took 576 ms
+Step 9 [DataLoopEmp] OK: took 0 ms
+Step 10 [DataSourceEmp] OK: took 576 ms
+Step 11 [DataLoopEmp] OK: took 0 ms
+Step 12 [DataSourceEmp] OK: took 549 ms
+Step 13 [DataLoopEmp] OK: took 0 ms
+Step 14 [DataSourceEmp] OK: took 571 ms
+Step 15 [DataLoopEmp] OK: took 0 ms
+TestCase finished with status [FINISHED], time taken = 4786
+Step 16 [GetEmployeeDetails] UNKNOWN: took 920 ms
+Step 17 [CleanUpEmp] OK: took 0 ms

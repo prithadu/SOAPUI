@@ -1,0 +1,11 @@
+Test started at 2019-11-21 18:25:06.375
+Step 1 [DataSourceEmpupdate] OK: took 594 ms
+Step 2 [Propertiesforempupdate] OK: took 6 ms
+Step 3 [REST Requestforupdate] UNKNOWN: took 1086 ms
+Step 4 [DataSourceLoopforEmpupdate] OK: took 0 ms
+Step 5 [DataSourceEmpupdate] OK: took 595 ms
+Step 6 [Propertiesforempupdate] OK: took 0 ms
+TestCase finished with status [FINISHED], time taken = 3154
+Step 7 [REST Requestforupdate] UNKNOWN: took 873 ms
+Step 8 [DataSourceLoopforEmpupdate] OK: took 0 ms
+Step 9 [CleanupEmpupdate] OK: took 0 ms

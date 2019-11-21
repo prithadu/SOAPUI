@@ -1,0 +1,13 @@
+Test started at 2019-11-21 18:23:42.731
+Step 1 [propertiesforcreate] OK: took 0 ms
+Step 2 [DataSourceEmpCreate] OK: took 158 ms
+Step 3 [DataLoopEmpCreate] OK: took 0 ms
+Step 4 [DataSourceEmpCreate] OK: took 590 ms
+Step 5 [DataLoopEmpCreate] OK: took 0 ms
+Step 6 [DataSourceEmpCreate] OK: took 554 ms
+Step 7 [DataLoopEmpCreate] OK: took 0 ms
+Step 8 [DataSourceEmpCreate] OK: took 560 ms
+Step 9 [DataLoopEmpCreate] OK: took 0 ms
+TestCase finished with status [FINISHED], time taken = 3271
+Step 10 [RestRequestforcreate] UNKNOWN: took 1409 ms
+Step 11 [CleanupEmpCreate] OK: took 0 ms
