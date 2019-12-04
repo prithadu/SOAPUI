@@ -19321,7 +19321,7 @@ Disable propery transfer or groovy whenever required </con:description><con:sett
 def result = testRunner.testCase.getTestStepByName('GetCustomerData').getPropertyValue("response") 
 log.info(result) 
 def object = new XmlSlurper().parseText(result)  
-//log.info(object)
+log.info(object)
 String a = object.toString();
 //log.info("Value stored in a is:" +a) 
 String id = (a.substring(0,2)); 
@@ -19341,7 +19341,7 @@ declare namespace ns1='http://soap.upskills.in/soap/default?services=customerCus
          <customerId>${#TestCase#custid}</customerId>
       </def:customerCustomerRepositoryV1GetByIdRequest>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="69ec365c-3300-4ba4-9e65-52124d30ce80"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>custid</con:name><con:value>16</con:value></con:property></con:properties></con:testCase><con:testCase id="2af74951-32e0-4f9a-87f1-886acf993287" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DeleteCutomerid" searchProperties="true"><con:description>Set the emp id in project level using groovy.
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="69ec365c-3300-4ba4-9e65-52124d30ce80"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>custid</con:name><con:value>19</con:value></con:property></con:properties></con:testCase><con:testCase id="2af74951-32e0-4f9a-87f1-886acf993287" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DeleteCutomerid" searchProperties="true"><con:description>Set the emp id in project level using groovy.
 Delete the customer;</con:description><con:settings/><con:testStep type="groovy" name="Groovy Scripttosetcustid" id="0550b06c-e8e4-4248-94c3-53ef24859747"><con:settings/><con:config><script>//Create a testStep level property
 
 testRunner.testCase.setPropertyValue("Customerid","6")
